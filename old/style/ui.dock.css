@@ -1,0 +1,65 @@
+.dockShadow {
+	position: absolute;
+	background: rgba(250, 250, 150, 0.2);
+	border:3px solid;
+	border-color: hsla(45, 75%, 75%, 0.5 );;
+	border-radius: 1px;
+}
+
+.ui-dock
+{
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.rowDock
+{
+
+}
+
+.cellDockz
+{
+	display:inline-block;
+	overflow:hidden;
+}
+
+#root
+{
+	width:1500px;
+	height:800px;
+}
+
+.vsplitbar
+{
+	width:2px;
+}
+
+.hsplitbar
+{
+	height:2px;
+}
+
+.ui-tabs
+{
+	background: none;
+	border:none;
+}
+
+.ui-dock
+{
+	border: 1px solid #aaaaaa;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+/* .ui-tabs-nav */
+/* { */
+/* 	background-image: url("C:/Centre/Dev/Web/Docking/WebContent/blue-swirl-banner-background-8268422.jpg"); */
+/* } */
+
+/* .ui-tabs .ui-tabs-panel */
+/* { */
+/* 	background-image: url("C:/Centre/Dev/Web/Docking/WebContent/Comic-Clouds-Twitter-Banner-Background-copy.jpg"); */
+/* } */

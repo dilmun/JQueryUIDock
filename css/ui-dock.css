@@ -1,0 +1,8 @@
+.ui-dock-tabitem>.ui-icon-close {
+  cursor: pointer;
+  float: left;
+}
+
+.ui-dock-container {
+  padding:0px;
+}

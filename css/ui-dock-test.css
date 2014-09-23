@@ -1,3 +1,12 @@
+body {
+  font-size:small;
+}
+
 #test-view-container {
   display:none;
+}
+
+#ui-dock-test {
+  height: 400px;
+  border: 2px solid #DDD;
 }

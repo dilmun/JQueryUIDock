@@ -25,6 +25,8 @@
     <h1>Dock test</h1>
 
     <!-- Functional testing -->
+    <button id="ui-dock-test-button">Add view</button>
+    
     <div id="ui-dock-test">
 
     </div>
@@ -93,16 +95,29 @@
     <div id="qunit-fixture">
     </div>
 
+    <!--
     <div id="qunit">
     </div>
+    -->
   </body>
   <script>
     var container = $('#ui-dock-test');
-    container.dock();
-    container.dock('add', 'view-1', $('#view-1'));
-    container.dock('add', 'view-2', $('#view-2'));
+    container.dock({
+      maxDepth : 4
+    });
+    
+    var count = 4;
+    $('#ui-dock-test-button').on('click', function() {
+      var $view = $('#view-4').clone();
+      var id = 'view-' + count;
+      $view.prop('id', id);
+      container.dock('add', id, $view, 'View ' + count);
+      count++;
+    });
+    
+    container.dock('add', 'view-1', $('#view-1'), 'View 1');
+    container.dock('add', 'view-2', $('#view-2'), 'View 2');
     container.dock('testSplit', 'view-3', $('#view-3'));
-    container.dock('testFurtherSplit', 'view-4', $('#view-4'));
     
     // Unit testing
     QUnit.test( "a basic test example", function( assert ) {

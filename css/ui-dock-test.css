@@ -6,7 +6,7 @@ body {
   display:none;
 }
 
-#ui-dock-test {
+#ui-dock-test, #ui-dock-test>.ui-dock-container {
   height: 400px;
-  border: 2px solid #DDD;
 }
+

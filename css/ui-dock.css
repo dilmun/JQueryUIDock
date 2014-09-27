@@ -1,8 +1,44 @@
 .ui-dock-tabitem>.ui-icon-close {
   cursor: pointer;
-  float: left;
+  float: right;
 }
 
-.ui-dock-container {
+.ui-dock-tabitem.ui-tabs-active>a.ui-tabs-anchor {
+  cursor:move;
+}
+
+.ui-dock-container.ui-layout-pane {
   padding:0px;
+  border:none;
+}
+
+.ui-dock-container.ui-dock-container-leaf {
+  border: 1px solid gray;
+}
+
+.ui-dock-element {
+  border: none;
+}
+
+.ui-dock-master * {
+  box-sizing: border-box;
+}
+
+.ui-dock-tabitem-handle {
+  float:left;
+  cursor:move;
+}
+
+.ui-dock-highlight {
+  position: absolute;
+  z-index: 100;
+  background: rgba(250, 250, 150, 0.2);
+  border:3px solid;
+  border-color: rgba(220, 220, 100, 0.2);
+  border-radius: 1px;
+}
+
+/* Used to freeze scrolling while dragging a tab */
+.ui-dock-container-frozen {
+  overflow: hidden;
 }

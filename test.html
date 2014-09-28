@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQueryUIDock test</title>
+
+    <!-- Dependencies -->
+    <link rel="stylesheet" href="lib/jquery-ui-1.11.1/jquery-ui.css">
+    <link rel="stylesheet" href="lib/jquery-ui-1.11.1/jquery-ui.theme.custom.css">
+    <link rel="stylesheet" href="lib/jquery.layout-latest/layout-default-latest.css">
+    <script src="lib/jquery-ui-1.11.1/external/jquery/jquery.js"></script>
+    <script src="lib/jquery-ui-1.11.1/jquery-ui.js"></script>
+    <script src="lib/jquery.layout-latest/jquery.layout-latest.js"></script>
+
+    <!-- Library -->    
+    <link rel="stylesheet" href="css/ui-dock.css">
+    <link rel="stylesheet" href="css/ui-dock-test.css">
+    <script src="lib/ui-dock.js"></script>
+  </head>
+  <body>
+    <h1>Dock test</h1>
+
+    <!-- Functional testing -->
+    <button id="ui-dock-test-button">Add view</button>
+    
+    <div id="ui-dock-test">
+
+    </div>
+    
+    <div id="test-view-container">
+      <div id="view-1">
+        <p>
+          Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+          Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+          Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+          Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
+          Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+          Donec non enim in turpis pulvinar facilisis. Ut felis.
+          Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
+          Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+        </p>
+      </div>
+      <div id="view-2">
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+          </li>
+          <li>
+            Aliquam tincidunt mauris eu risus.
+          </li>
+          <li>
+            Vestibulum auctor dapibus neque.
+          </li>
+        </ul>
+      </div>
+      <div id="view-3">
+        <ul>
+          <li>
+            Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+          </li>
+          <li>
+            Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+          </li>
+          <li>
+            Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.
+          </li>
+          <li>
+            Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+          </li>
+        </ul>
+      </div>
+      <div id="view-4">
+        <nav>
+          <ul>
+            <li><a href="#nowhere" title="Lorum ipsum dolor sit amet">Lorem</a></li>
+            <li><a href="#nowhere" title="Aliquam tincidunt mauris eu risus">Aliquam</a></li>
+            <li><a href="#nowhere" title="Morbi in sem quis dui placerat ornare">Morbi</a></li>
+            <li><a href="#nowhere" title="Praesent dapibus, neque id cursus faucibus">Praesent</a></li>
+            <li><a href="#nowhere" title="Pellentesque fermentum dolor">Pellentesque</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="view-5">
+
+      </div>
+    </div>
+  </body>
+  
+  <script>
+    var container = $('#ui-dock-test');
+    container.dock({
+      maxDepth : 4
+    });
+    
+    var count = 4;
+    $('#ui-dock-test-button').on('click', function() {
+      var $view = $('#view-4').clone();
+      var id = 'view-' + count;
+      $view.prop('id', id);
+      container.dock('add', id, $view, 'View ' + count);
+      count++;
+    });
+    
+    container.dock('add', 'view-1', '#view-1', 'View 1');
+    container.dock('add', 'view-2', $('#view-2'), 'View 2');
+    container.dock('add', 'view-3', $('#view-3'), 'View 3');
+  </script>
+</html>

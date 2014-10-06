@@ -32,10 +32,14 @@
 .ui-dock-highlight {
   position: absolute;
   z-index: 100;
-  background: rgba(250, 250, 150, 0.2);
+  background: rgba(250, 250, 200, 0.2);
   border:3px solid;
-  border-color: rgba(220, 220, 100, 0.2);
+  border-color: rgba(230, 230, 180, 0.2);
   border-radius: 1px;
+  box-sizing: border-box;
+  
+  vertical-align: middle;
+  text-align: center;
 }
 
 /* Used to freeze scrolling while dragging a tab */

@@ -21,6 +21,7 @@
 
     <!-- Functional testing -->
     <button id="ui-dock-test-button">Add view</button>
+    <button id="ui-dock-test-open">Open view 3</button>
     
     <div id="ui-dock-test">
 
@@ -89,8 +90,9 @@
   <script>
     var container = $('#ui-dock-test');
     container.dock({
-      maxDepth : 2,
-      'verticalPriority' : true
+      maxDepth : 4,
+      'verticalPriority' : true,
+      'highlightFade' : 1000
     });
     
     var count = 4;
@@ -100,6 +102,10 @@
       $view.prop('id', id);
       container.dock('add', id, $view, 'View ' + count);
       count++;
+    });
+    
+    $('#ui-dock-test-open').on('click', function() {
+      container.dock('open', 'view-3');
     });
     
     container.dock('add', 'view-1', '#view-1', 'View 1');

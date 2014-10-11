@@ -16,28 +16,67 @@
     <script src="javascripts/ui-dock.js"></script>
     
     <style>
+      html {
+        height: 100%;
+        box-sizing: border-box;
+      }
+    
       body {
         font-size: small;
+        height: 100%;
+        margin:0;
       }
 
       #test-view-container {
         display: none;
       }
-
-      #ui-dock-test, #ui-dock-test > .ui-dock-container {
-        height: 400px;
+      
+      #ui-dock-example {
+        position:fixed;
+        top:50px;
+        left:0px;
+        width: 100%;
+        height: 90%;
+        height:calc(100% - 50px);
+      }
+      
+      .ui-dock-container {
+        height: 100%;
+      }
+      
+      #ui-dock-example-navbar {
+        position: fixed;
+        height: 50px;
+        background-color: black;
+        color: white;
+        top: 0px;
+        left: 0px;
+        padding-left: 20px;
+        width: 100%;
+        z-index: 100;
+      }
+      
+      #ui-dock-example-navbar h1 {
+        float: left;
+        margin-right: 30px;
+      }
+      
+      #ui-dock-example-navbar button {
+        margin-left: 15px;
+        margin-top: 12px;
       }
     </style>
   </head>
   <body>
-    <h1>Dock test</h1>
-
-    <!-- Functional testing -->
-    <button id="ui-dock-test-button">Add view</button>
-    <button id="ui-dock-test-open">Open view 3</button>
-    
-    <div id="ui-dock-test">
-
+    <nav id="ui-dock-example-navbar">      
+      <h1>Dock test</h1>
+  
+      <!-- Functional testing -->
+      <button id="ui-dock-example-button">Add view</button>
+      <button id="ui-dock-example-open">Open view 3</button>
+    </nav>
+       
+    <div id="ui-dock-example">
     </div>
     
     <div id="test-view-container">
@@ -101,7 +140,7 @@
   </body>
   
   <script>
-    var container = $('#ui-dock-test');
+    var container = $('#ui-dock-example');
     container.dock({
       maxDepth : 4,
       'verticalPriority' : true
@@ -109,7 +148,7 @@
     });
     
     var count = 4;
-    $('#ui-dock-test-button').on('click', function() {
+    $('#ui-dock-example-button').button().on('click', function() {
       var $view = $('#view-4').clone();
       var id = 'view-' + count;
       $view.prop('id', id);
@@ -117,7 +156,7 @@
       count++;
     });
     
-    $('#ui-dock-test-open').on('click', function() {
+    $('#ui-dock-example-open').button().on('click', function() {
       container.dock('open', 'view-3');
     });
     

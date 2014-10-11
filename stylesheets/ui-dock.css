@@ -1,0 +1,75 @@
+.ui-dock-tabitem>.ui-icon-close {
+  cursor: pointer;
+  float: right;
+}
+
+.ui-dock-tabitem.ui-tabs-active > a.ui-tabs-anchor {
+  cursor:move;
+}
+
+.ui-dock-container.ui-layout-pane {
+  padding:0px;
+  border:none;
+}
+
+.ui-dock-container.ui-dock-container-leaf {
+  border: 1px solid gray;
+}
+
+.ui-dock-element {
+  border: none;
+}
+
+.ui-dock-tabitem-handle {
+  float:left;
+  cursor:move;
+}
+
+.ui-dock-master .ui-dock-tabitem > a {
+  font-size: 100%;
+}
+
+.ui-dock-highlight {
+  position: absolute;
+  z-index: 100;
+  background: rgba(230, 230, 180, 0.2);
+  border:3px solid;
+  border-color: rgba(200, 200, 150, 0.2);
+  border-radius: 1px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Used to freeze scrolling while dragging a tab */
+.ui-dock-container-frozen {
+  overflow: hidden;
+}
+
+/* In order to keep uniform region calculations, 
+  all containers must have absolute positioning... */
+.ui-dock-container {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ... and the following is required for the "width: 
+ * 100%" property to work */
+.ui-dock-master {
+  position: relative;
+}
+
+.ui-dock-master > .ui-dock-tabitem.ui-sortable-helper {
+  list-style: none;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ui-dock-master > .ui-dock-tabitem.ui-sortable-helper > a {
+  line-height: 2.2;
+  font-size: 1.1em;
+  color:#DDDDDD;
+}
